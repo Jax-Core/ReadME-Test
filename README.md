@@ -6,9 +6,8 @@
   </a>
 
 <h3 align="center">ReadME-Test</h3>
-
   <p align="center">
-    
+    Tests CoreRepo dynamic readme
     <br />
     <a href="https://discord.gg/JmgehPSDD6">Help, Report Bugs & Request Features »</a>
   </p>
@@ -25,8 +24,10 @@
   <img alt="Github" src="https://img.shields.io/github/license/Jax-Core/ReadME-Test?style=for-the-badge" />
 </p><!-- END ShieldsFull.mustache -->
 <!-- START About.mustache -->
+
 ## About
 
 ![ReadME-Test](https://raw.githubusercontent.com/Jax-Core/ReadME-Template/main/Resources/Splash/ReadME-Test.png)
+
 <!-- END About.mustache -->
 ReadME-Test full long description goes here
