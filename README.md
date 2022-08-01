@@ -13,4 +13,5 @@
     <a href="https://discord.gg/JmgehPSDD6">Help, Report Bugs & Request Features »</a>
   </p>
 </div>
+
 <!-- END Header.mustache -->
