@@ -1,1 +1,1 @@
-<!-- START common-footer.mustache -->
+<!-- include common-footer.mustache -->
