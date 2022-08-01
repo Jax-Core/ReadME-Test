@@ -1,12 +1,19 @@
-name: Dynamic Template
+name: "📄  Dynamic ReadME"
+
+env:
+  VS_WORKFLOW_TYPE: "dynamic-readme"
 
 on:
-  create:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - README.md
 
 jobs:
-  update_templates:
-    name: "Update Templates"
+  update_readme:
+    name: "Render & Update ReadME"
     runs-on: ubuntu-latest
     steps:
       - name: "📥  Fetching Repository Contents"
@@ -17,10 +24,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "💫  Dynamic Template Render"
-        uses: varunsridharan/action-dynamic-readme@main
+      - name: "⚡  Repository - Before Hook"
+        run: |
+          echo " "
+          if [ -f $VS_BEFORE_HOOK_FILE_LOCATION ]; then
+            echo "✅ Before Hook File Found : $VS_BEFORE_HOOK_FILE_LOCATION"
+            sh $VS_BEFORE_HOOK_FILE_LOCATION
+          else
+            echo "⚠️ No Before Hook File Found : $VS_BEFORE_HOOK_FILE_LOCATION"
+          fi
+          echo " "
+      - name: "💫  Update README.md"
+        uses: "varunsridharan/action-dynamic-readme@main"
         with:
-          GLOBAL_TEMPLATE_REPOSITORY: Jax-Core/ReadME-Template
+          GLOBAL_TEMPLATE_REPOSITORY: varunsridharan/varunsridharan@main/readme-templates
           files: |
             README.md
         env:
